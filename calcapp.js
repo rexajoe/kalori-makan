@@ -20,7 +20,6 @@ function addTaskSatu() {
       const valueInputTargetKalori = parseInt(inputTargetKalori.value);
       if (!isNaN(valueInputTargetKalori)) {
         totalTargetkalori = valueInputTargetKalori;
-        console.log(totalTargetkalori);
       }
     }
     addNumberTargetKalori();
