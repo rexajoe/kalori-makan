@@ -4,6 +4,7 @@ const jenisMakanan = document.getElementById("jenis-makanan");
 const kaloriMakanan = document.getElementById("kalori-makanan");
 const listMakananDetail = document.getElementById("list-makanan-detail");
 const subTitle = document.getElementById("h6");
+const kesimpulan = document.getElementById("kesimpulan");
 
 //jika menggunakan classname maka harus memilih element dulu seperti code dibawah
 //listContainers[0] adalah element pertama yang dipilih dan akan digunakan untuk create elemen h5
@@ -33,8 +34,10 @@ function addTaskSatu() {
 
     if (totalTargetkalori > total) {
       console.log(`kamu kurang makan ${totalTargetkalori - total} kalori`);
-    } else {
-      console.log(`kamu kelebihan makan ${total - totalTargetkalori}`);
+    } else if ((totalTargetkalori = total)) {
+      console.log(`kamu makan sesuai kalori`);
+    } else if (totalTargetkalori < total) {
+      console.log(`kamu kebanyakan makan ${total - totalTargetkalori} kalori`);
     }
   }
 }
@@ -45,29 +48,49 @@ function addTaskDua() {
     alert("isi dulu jenis makanan dan kalorinya berapa");
   } else {
     function addNumber() {
+      let kaloriResult = document.createElement("li");
+      kaloriResult.innerHTML = `${jenisMakanan.value} dengan kalori ${kaloriMakanan.value}`;
+      listMakananDetail.appendChild(kaloriResult);
       const number = parseInt(kaloriMakanan.value, 10);
+      let span = document.createElement("span");
+      span.setAttribute("data-number", number);
+      span.innerHTML = "\u00d7";
+      kaloriResult.appendChild(span);
       if (!isNaN(number)) {
         total += number;
-        console.log(total);
+        span.addEventListener("click", function () {
+          const numberToSubtract = parseInt(
+            this.getAttribute("data-number"),
+            10
+          );
+          total -= numberToSubtract;
+          this.parentElement.remove();
+          if (totalTargetkalori > total) {
+            console.log(
+              `kamu kurang makan ${totalTargetkalori - total} kalori`
+            );
+          } else if ((totalTargetkalori = total)) {
+            console.log(`kamu makan sesuai kalori`);
+          } else if (totalTargetkalori < total) {
+            console.log(
+              `kamu kebanyakan makan ${total - totalTargetkalori} kalori`
+            );
+          }
+        });
+        kaloriResult.appendChild(span);
       }
+      subTitle.style.display = "block";
+      jenisMakanan.value = "";
+      kaloriMakanan.value = "";
     }
     addNumber();
-    subTitle.style.display = "block";
-    let kaloriResult = document.createElement("li");
-    kaloriResult.innerHTML = `${jenisMakanan.value} dengan kalori ${kaloriMakanan.value}`;
-    listMakananDetail.appendChild(kaloriResult);
-    jenisMakanan.value = "";
-    kaloriMakanan.value = "";
-    let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
-    kaloriResult.appendChild(span);
-    span.addEventListener("click", function () {
-      this.parentElement.remove();
-    });
+
     if (totalTargetkalori > total) {
       console.log(`kamu kurang makan ${totalTargetkalori - total} kalori`);
-    } else {
-      console.log(`kamu kelebihan makan ${total - totalTargetkalori}`);
+    } else if ((totalTargetkalori = total)) {
+      console.log(`kamu makan sesuai kalori`);
+    } else if (totalTargetkalori < total) {
+      console.log(`kamu kebanyakan makan ${total - totalTargetkalori} kalori`);
     }
   }
 }
