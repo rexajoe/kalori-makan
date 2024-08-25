@@ -49,6 +49,8 @@ function addTaskSatu() {
     } else if ((totalTargetkalori = total)) {
       kesimpulan.innerHTML = `Kamu sudah makan sesuai kalori`;
       listContainer.appendChild(kesimpulan);
+    } else if (totalTargetkalori === 0 && total === 0) {
+      kesimpulan.remove();
     }
   }
 }
@@ -94,6 +96,8 @@ function addTaskDua() {
           } else if ((totalTargetkalori = total)) {
             kesimpulan.innerHTML = `Kamu sudah makan sesuai kalori`;
             listContainer.appendChild(kesimpulan);
+          } else if (totalTargetkalori === 0 && total === 0) {
+            kesimpulan.remove();
           }
         });
         kaloriResult.appendChild(span);
@@ -122,6 +126,8 @@ function addTaskDua() {
     } else if ((totalTargetkalori = total)) {
       kesimpulan.innerHTML = `Kamu sudah makan sesuai kalori`;
       listContainer.appendChild(kesimpulan);
+    } else if (totalTargetkalori === 0 && total === 0) {
+      kesimpulan.remove();
     }
   }
 }
