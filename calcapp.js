@@ -4,7 +4,7 @@ const jenisMakanan = document.getElementById("jenis-makanan");
 const kaloriMakanan = document.getElementById("kalori-makanan");
 const listMakananDetail = document.getElementById("list-makanan-detail");
 const subTitle = document.getElementById("h6");
-
+let kesimpulan = document.createElement("h7");
 //jika menggunakan classname maka harus memilih element dulu seperti code dibawah
 //listContainers[0] adalah element pertama yang dipilih dan akan digunakan untuk create elemen h5
 const listContainer = listContainers.length > 0 ? listContainers[0] : null;
@@ -32,20 +32,23 @@ function addTaskSatu() {
     inputTargetKalori.value = "";
 
     if (totalTargetkalori > total) {
-      console.log(`kamu kurang makan ${totalTargetkalori - total} kalori`);
+      kesimpulan.innerHTML = `Kamu kurang makan ${
+        totalTargetkalori - total
+      } kalori`;
+      listContainer.appendChild(kesimpulan);
     } else if (totalTargetkalori < total) {
-      console.log(`kamu kebanyakan makan ${total - totalTargetkalori} kalori`);
-    } else {
-      console.log(`Kamu makan sesuai kalori`);
+      kesimpulan.innerHTML = `Kamu kebanyakan makan ${
+        total - totalTargetkalori
+      } kalori`;
+      listContainer.appendChild(kesimpulan);
+    } else if ((totalTargetkalori = total)) {
+      kesimpulan.innerHTML = `Kamu sudah makan sesuai kalori`;
+      listContainer.appendChild(kesimpulan);
     }
   }
 }
 
 let total = 0;
-const kesimpulan = document.getElementById("kesimpulan");
-const kurangMakan = `Kamu kurang makan ${totalTargetkalori - total}`;
-const pasMakan = `Kamu makan sesuai kalori`;
-const kebanyakanMakan = `Kamu kurang makan ${total - totalTargetkalori}`;
 function addTaskDua() {
   if (jenisMakanan.value === "" || kaloriMakanan.value === "") {
     alert("isi dulu jenis makanan dan kalorinya berapa");
@@ -69,15 +72,18 @@ function addTaskDua() {
           total -= numberToSubtract;
           this.parentElement.remove();
           if (totalTargetkalori > total) {
-            console.log(
-              `kamu kurang makan ${totalTargetkalori - total} kalori`
-            );
+            kesimpulan.innerHTML = `Kamu kurang makan ${
+              totalTargetkalori - total
+            } kalori`;
+            listContainer.appendChild(kesimpulan);
           } else if (totalTargetkalori < total) {
-            console.log(
-              `kamu kebanyakan makan ${total - totalTargetkalori} kalori`
-            );
-          } else {
-            console.log(`Kamu makan sesuai kalori`);
+            kesimpulan.innerHTML = `Kamu kebanyakan makan ${
+              total - totalTargetkalori
+            } kalori`;
+            listContainer.appendChild(kesimpulan);
+          } else if ((totalTargetkalori = total)) {
+            kesimpulan.innerHTML = `Kamu sudah makan sesuai kalori`;
+            listContainer.appendChild(kesimpulan);
           }
         });
         kaloriResult.appendChild(span);
@@ -89,11 +95,18 @@ function addTaskDua() {
     addNumber();
 
     if (totalTargetkalori > total) {
-      console.log(`kamu kurang makan ${totalTargetkalori - total} kalori`);
+      kesimpulan.innerHTML = `Kamu kurang makan ${
+        totalTargetkalori - total
+      } kalori`;
+      listContainer.appendChild(kesimpulan);
     } else if (totalTargetkalori < total) {
-      console.log(`kamu kebanyakan makan ${total - totalTargetkalori} kalori`);
-    } else {
-      console.log(`Kamu makan sesuai kalori`);
+      kesimpulan.innerHTML = `Kamu kebanyakan makan ${
+        total - totalTargetkalori
+      } kalori`;
+      listContainer.appendChild(kesimpulan);
+    } else if ((totalTargetkalori = total)) {
+      kesimpulan.innerHTML = `Kamu sudah makan sesuai kalori`;
+      listContainer.appendChild(kesimpulan);
     }
   }
 }
