@@ -36,6 +36,11 @@ function addTaskSatu() {
         totalTargetkalori - total
       } kalori`;
       listContainer.appendChild(kesimpulan);
+    } else if (totalTargetkalori === 0 && totalTargetkalori < total) {
+      kesimpulan.innerHTML = `Kamu sudah makan ${
+        total - totalTargetkalori
+      } kalori`;
+      listContainer.appendChild(kesimpulan);
     } else if (totalTargetkalori < total) {
       kesimpulan.innerHTML = `Kamu kebanyakan makan ${
         total - totalTargetkalori
@@ -76,6 +81,11 @@ function addTaskDua() {
               totalTargetkalori - total
             } kalori`;
             listContainer.appendChild(kesimpulan);
+          } else if (totalTargetkalori === 0 && totalTargetkalori < total) {
+            kesimpulan.innerHTML = `Kamu sudah makan ${
+              total - totalTargetkalori
+            } kalori`;
+            listContainer.appendChild(kesimpulan);
           } else if (totalTargetkalori < total) {
             kesimpulan.innerHTML = `Kamu kebanyakan makan ${
               total - totalTargetkalori
@@ -97,6 +107,11 @@ function addTaskDua() {
     if (totalTargetkalori > total) {
       kesimpulan.innerHTML = `Kamu kurang makan ${
         totalTargetkalori - total
+      } kalori`;
+      listContainer.appendChild(kesimpulan);
+    } else if (totalTargetkalori === 0 && totalTargetkalori < total) {
+      kesimpulan.innerHTML = `Kamu sudah makan ${
+        total - totalTargetkalori
       } kalori`;
       listContainer.appendChild(kesimpulan);
     } else if (totalTargetkalori < total) {
