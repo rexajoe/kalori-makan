@@ -15,6 +15,8 @@ function addTaskSatu() {
       "tolong isi dulu target kalorimu, atau kalo tanpa target gausah diklik Add!"
     );
   } else {
+    const valueInputTargetKalori = parseInt(inputTargetKalori.value);
+    console.log(valueInputTargetKalori);
     const overwrite = listContainer.querySelectorAll("h5");
     overwrite.forEach((header) => header.remove());
     let targetKalori = document.createElement("h5");
@@ -28,6 +30,10 @@ function addTaskDua() {
   if (jenisMakanan.value === "" || kaloriMakanan.value === "") {
     alert("isi dulu jenis makanan dan kalorinya berapa");
   } else {
+    let total = 0;
+    const addNumber = parseInt(kaloriMakanan.value);
+    total += addNumber;
+    console.log(total);
     subTitle.style.display = "block";
     let kaloriResult = document.createElement("li");
     kaloriResult.innerHTML = `${jenisMakanan.value} dengan kalori ${kaloriMakanan.value}`;
