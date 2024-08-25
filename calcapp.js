@@ -4,7 +4,6 @@ const jenisMakanan = document.getElementById("jenis-makanan");
 const kaloriMakanan = document.getElementById("kalori-makanan");
 const listMakananDetail = document.getElementById("list-makanan-detail");
 const subTitle = document.getElementById("h6");
-const kesimpulan = document.getElementById("kesimpulan");
 
 //jika menggunakan classname maka harus memilih element dulu seperti code dibawah
 //listContainers[0] adalah element pertama yang dipilih dan akan digunakan untuk create elemen h5
@@ -34,15 +33,19 @@ function addTaskSatu() {
 
     if (totalTargetkalori > total) {
       console.log(`kamu kurang makan ${totalTargetkalori - total} kalori`);
-    } else if ((totalTargetkalori = total)) {
-      console.log(`kamu makan sesuai kalori`);
     } else if (totalTargetkalori < total) {
       console.log(`kamu kebanyakan makan ${total - totalTargetkalori} kalori`);
+    } else {
+      console.log(`Kamu makan sesuai kalori`);
     }
   }
 }
 
 let total = 0;
+const kesimpulan = document.getElementById("kesimpulan");
+const kurangMakan = `Kamu kurang makan ${totalTargetkalori - total}`;
+const pasMakan = `Kamu makan sesuai kalori`;
+const kebanyakanMakan = `Kamu kurang makan ${total - totalTargetkalori}`;
 function addTaskDua() {
   if (jenisMakanan.value === "" || kaloriMakanan.value === "") {
     alert("isi dulu jenis makanan dan kalorinya berapa");
@@ -69,12 +72,12 @@ function addTaskDua() {
             console.log(
               `kamu kurang makan ${totalTargetkalori - total} kalori`
             );
-          } else if ((totalTargetkalori = total)) {
-            console.log(`kamu makan sesuai kalori`);
           } else if (totalTargetkalori < total) {
             console.log(
               `kamu kebanyakan makan ${total - totalTargetkalori} kalori`
             );
+          } else {
+            console.log(`Kamu makan sesuai kalori`);
           }
         });
         kaloriResult.appendChild(span);
@@ -87,10 +90,10 @@ function addTaskDua() {
 
     if (totalTargetkalori > total) {
       console.log(`kamu kurang makan ${totalTargetkalori - total} kalori`);
-    } else if ((totalTargetkalori = total)) {
-      console.log(`kamu makan sesuai kalori`);
     } else if (totalTargetkalori < total) {
       console.log(`kamu kebanyakan makan ${total - totalTargetkalori} kalori`);
+    } else {
+      console.log(`Kamu makan sesuai kalori`);
     }
   }
 }
