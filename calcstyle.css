@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, blue, green);
+  padding: 20px;
+}
+
+.list-container {
+  max-width: 512px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 200px auto 200px;
+  padding: 2%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h2 {
+  display: block;
+  padding: 10px 10px;
+  margin-top: 5%;
+}
+
+.target-kalori {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputkalori-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
+  padding-left: 5%;
+}
+
+#input-target-kalori {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+#btn-1 {
+  background: linear-gradient(135deg, blue, green);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.makan-hari-ini {
+  display: flex;
+  flex-direction: column;
+}
+
+#jenis-makanan,
+#kalori-makanan {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
+  padding-left: 5%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+}
+
+#btn-2 {
+  background: linear-gradient(135deg, blue, green);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 50px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/*h5 dan li dari javascript*/
+h5 {
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+}
+/*misal dihide dulu*/
+h6 {
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#list-makanan {
+  display: flex;
+  flex-direction: column;
+}
+
+#list-makanan-detail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+
+#list-makanan-detail li {
+  font-size: 12px;
+  color: white;
+  list-style: none;
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
+  user-select: none;
+  position: relative;
+}
+
+#list-makanan-detail li span {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  font-size: 10px;
+  color: #ffffff;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgb(213, 37, 37);
+}

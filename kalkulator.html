@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalori Hari Ini</title>
+    <link rel="stylesheet" href="calcstyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="list-container">
+        <h2>Kalori Hari Ini</h2>
+        <div class="target-kalori">
+          <label>Target Kalori</label>
+          <div class="inputkalori-button">
+            <input
+              type="number"
+              id="input-target-kalori"
+              placeholder="berapa target kalori harianmu?"
+            />
+            <button onclick="addTaskSatu()" id="btn-1">Add</button>
+          </div>
+        </div>
+        <div class="makan-hari-ini">
+          <label>Makan apa aja hari ini?</label>
+          <input
+            type="text"
+            id="jenis-makanan"
+            placeholder="nasi ayam goreng"
+          />
+          <label>Berapa kalori kira kira?</label>
+          <input type="number" id="kalori-makanan" placeholder="700" />
+          <button onclick="addTaskDua()" id="btn-2">Add</button>
+        </div>
+        <div id="list-makanan">
+          <h6 id="h6">Kamu udah makan apa aja hari ini</h6>
+          <ul id="list-makanan-detail">
+            <!--list makanan ditambahkan disini-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="calcapp.js"></script>
+  </body>
+</html>
