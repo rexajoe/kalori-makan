@@ -91,6 +91,8 @@ h2 {
 .button-bawah {
   justify-content: space-between;
   display: flex;
+  margin-bottom: 3%;
+  margin-top: 2%;
 }
 
 #btn-2 {
